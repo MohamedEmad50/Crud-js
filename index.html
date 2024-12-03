@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="css/all.min.css"> -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="main container text-center d-flex flex-column justify-content-center align-content-center"
+    >
+      <h1 class="my-5 position-relative mx-auto">Bookmarker</h1>
+      <div class="form-input w-100">
+        <div
+          class="inputs my-3  p-2 d-flex flex-column justify-content-start align-items-center"
+        >
+          <h2 class="sub-title mb-3">
+            <i class="fa-solid fa-bookmark before"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark after"></i>
+          </h2>
+
+          <div
+            class="book-name w-100 d-flex flex-column justify-content-center my-3"
+          >
+            <label for="bookmarkName" class="pb-2 fw-semibold align-self-start">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name</label
+            >
+            <input
+              type="text"
+              placeholder="Bookmark Name "
+              class="form-control inpFocus "
+              id="bookmarkName"
+              oninput="validInputs(this)"
+            />
+            <div  class="alert alert-danger d-none mt-2" role="alert">
+              the name must be unique and contains of 3 characters.
+            </div>
+          </div>
+          <div
+            class="site-url w-100 d-flex flex-column justify-content-center my-3"
+          >
+            <label for="bookmarkURL" class="pb-2 fw-semibold align-self-start">
+              <i class="fa-solid fa-link pe-2"></i>Site URL</label
+            >
+            <input
+              type="url"
+              placeholder="Website URL"
+              class="form-control inpFocus"
+              id="bookmarkURL"
+              oninput="validInputs(this)"
+            />
+            <div  class="alert alert-danger d-none mt-2" role="alert">
+              the url must contains [http(s)://www.sitename.com] like [https://www.facebook.com]            </div>
+          </div>
+
+          <button onclick="addMark()"  class="btn-submit btn btn-danger px-5"> Submit</button>
+
+          <div id="error-message" class="error-message  bg-white text-start rounded-2  shadow-lg position-absolute  start-50 top-50 translate-middle d-none">
+            <header class="header-message d-flex flex-wrap justify-content-between">
+              <div class="box-items p-3">
+                <span class="rounded-circle  bg-danger me-1"></span>
+                <span class="rounded-circle  bg-warning me-1"></span>
+                <span class="rounded-circle  bg-success"></span>
+              </div>
+              <div onclick="cancel()" class="btn-cancel p-2"><button class="border-0 bg-transparent fw-bold fs-6">X</button></div>
+            </header>
+            <p class="m-0 pb-2 ps-3 fw-bold">Site Name or Url is not valid, Please follow the rules below : </p>
+            <ul class="my-3">
+              <li class="list-unstyled mb-2"> <i class="fa-regular fa-circle-right text-danger "></i> Site name must contain at least 3 characters and unqiue</li>
+              <li class="list-unstyled"><i class="fa-regular fa-circle-right text-danger"></i> Site URL must be a valid one</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="display d-flex flex-row justify-content-around ">
+        <table id="Table" class="w-100 bg-white text-cente r m-5">
+          <thead class="border-top-0 border-start-0 border-end-0 border-3 border-light ">
+            <tr class="px-5 py-2 text-center">
+              <th class="p-2">Index</td>
+              <th class="p-2">Website Name</td>
+              <th class="p-2">Visit</td>
+              <th class="p-2">Delete</td>
+            </tr>
+          </thead>
+          <tbody id="records" class="border-top-0 border-start-0 border-end-0 border-3 border-light ">
+
+          </tbody>
+        </table>
+      </div>
+   
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
+
+
+
+
+<!-- 
+valid URL
+
+vaild Site Name
+
+-->
